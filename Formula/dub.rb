@@ -11,8 +11,7 @@ class Dub < Formula
   end
 
   devel do
-    url "https://github.com/dlang/dub/archive/v1.0.0-beta.1.tar.gz"
-    sha256 "47191b7299562e0f25bdad28ad8be1d4fe09e6f7c40f50acc78455e3dc28da0c"
+    url"https://github.com/dlang/dub.git", :tag => "v1.0.0-beta.1", :revision => "ffcd5899ddeabd98dfe6f9ff7e59cc9a5688414a"
     version "1.0.0-beta.1"
   end
 
@@ -20,7 +19,6 @@ class Dub < Formula
   depends_on "dmd" => :build
 
   def install
-    ENV["GITVER"] = "1.0.0-beta.1" if build.devel?
     system "./build.sh"
     bin.install "bin/dub"
   end
