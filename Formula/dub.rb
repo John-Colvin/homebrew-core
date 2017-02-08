@@ -13,8 +13,8 @@ class Dub < Formula
   end
 
   devel do
-    url "https://github.com/dlang/dub/archive/v1.2.0-beta.2.tar.gz"
-    sha256 "d319620d17fcc9d8c43cc2f958ff3147b0d36aac8f5c62200af5e56960404cff"
+    url "https://github.com/dlang/dub/archive/v1.2.1-beta.1.tar.gz"
+    sha256 "8d0a8fd59afaf23194b99dd4e5b3ffd65c56f9d9da74d762d01fba9af6d79b07"
   end
 
   depends_on "pkg-config" => [:recommended, :run]
