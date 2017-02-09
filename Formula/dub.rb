@@ -1,7 +1,7 @@
 class Dub < Formula
   desc "Build tool for D projects"
   homepage "https://code.dlang.org/about"
-
+  version_scheme 1
   head "https://github.com/dlang/dub.git"
 
   stable do
