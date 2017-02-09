@@ -1,10 +1,13 @@
 class Dub < Formula
   desc "Build tool for D projects"
   homepage "https://code.dlang.org/about"
-  url "https://github.com/dlang/dub/archive/v1.2.0.tar.gz"
-  sha256 "836caddb30ad5972a453269b027f614d51b5fd2f751a0fe63cfeb0be7388a8e9"
 
   head "https://github.com/dlang/dub.git"
+
+  stable do
+    url "https://github.com/dlang/dub/archive/v1.2.0.tar.gz"
+    sha256 "836caddb30ad5972a453269b027f614d51b5fd2f751a0fe63cfeb0be7388a8e9"
+  end
 
   bottle do
     sha256 "9d96e4cba1202ca9273b5f93dd2864357f0635b239f1e39fe9eff79c2bc12cb6" => :sierra
@@ -13,6 +16,7 @@ class Dub < Formula
   end
 
   devel do
+    version "1.2.1-beta.1" # homebrew can't always detect version number correctly when in URL
     url "https://github.com/dlang/dub/archive/v1.2.1-beta.1.tar.gz"
     sha256 "8d0a8fd59afaf23194b99dd4e5b3ffd65c56f9d9da74d762d01fba9af6d79b07"
   end
@@ -21,11 +25,13 @@ class Dub < Formula
   depends_on "dmd" => :build
 
   def install
+    ENV["GITVER"] = version.to_s
     system "./build.sh"
     bin.install "bin/dub"
   end
 
   test do
     system "#{bin}/dub; true"
+    assert_match(version.to_s, shell_output("#{bin}/dub --version").split[2])
   end
 end
