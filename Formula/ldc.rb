@@ -4,12 +4,14 @@ class Ldc < Formula
 
   stable do
     url "https://github.com/ldc-developers/ldc/releases/download/v1.2.0/ldc-1.2.0-src.tar.gz"
-    sha256 "910e8a670f0fadcaf64403c924091d6debf7ad29e203808f5f2b6899217e6f2b"
+    sha256 "0fd90d786254665b3e846b9a92cfd0b4e9c9c1840ebd26ddc0c0a0d4cd8726b9"
 
     resource "ldc-lts" do
       url "https://github.com/ldc-developers/ldc/releases/download/v0.17.4/ldc-0.17.4-src.tar.gz"
       sha256 "48428afde380415640f3db4e38529345f3c8485b1913717995547f907534c1c3"
     end
+
+    depends_on "libconfig"
   end
 
   bottle do
@@ -20,8 +22,8 @@ class Ldc < Formula
 
   devel do
     url "https://github.com/ldc-developers/ldc/releases/download/v1.3.0-beta1/ldc-1.3.0-beta1-src.tar.gz"
-    version "1.3.0-beta1"
     sha256 "35d5c37e967ccfa762572d0c5cb73e42617615d5eb16e43595a4bf239dd14e49"
+    version "1.3.0-beta1"
 
     resource "ldc-lts" do
       url "https://github.com/ldc-developers/ldc/releases/download/v0.17.4/ldc-0.17.4-src.tar.gz"
@@ -41,7 +43,6 @@ class Ldc < Formula
 
   depends_on "cmake" => :build
   depends_on "llvm"
-  depends_on "libconfig"
 
   def install
     ENV.cxx11
