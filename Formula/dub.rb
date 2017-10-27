@@ -3,7 +3,7 @@ class Dub < Formula
   homepage "https://code.dlang.org/getting_started"
   url "https://github.com/dlang/dub/archive/v1.5.0.tar.gz"
   sha256 "3509f959cc5b34e44adaae586b62ded387ac10031f6c1aaf1cfbb4aae5af37dd"
-  version_scheme 1
+  version_scheme "1"
 
   head "https://github.com/dlang/dub.git"
 
@@ -12,6 +12,11 @@ class Dub < Formula
     sha256 "2fa310eadd78afbe3e9fa2bf6129075d1e8ebc0cfbcbc85790576bcf887194da" => :sierra
     sha256 "14408bc3f1ed7c5193c37bd61f570ad22f8920d6b00cce1613a582bbbced8312" => :el_capitan
     sha256 "672931bef778a726c69692c0ca4cb3145ef5ba55cd616865dccc4e818ea0079d" => :yosemite
+  end
+
+  devel do
+    url "https://github.com/dlang/dub/archive/v1.6.0-beta.2.tar.gz"
+    sha256 "da1877c7c39a4905bca78083784733bfae59d60c7b665169d87fe2d81651b38f"
   end
 
   depends_on "pkg-config" => [:recommended, :run]
