@@ -11,6 +11,11 @@ class Ldc < Formula
     sha256 "73e5d71a5e36a6c9d501badef4eac74f39df8212f95278eda0f6c5f49ca1cfc2" => :sierra
   end
 
+  devel do
+    url "https://github.com/ldc-developers/ldc/releases/download/v1.14.0-beta1/ldc-1.14.0-beta1-src.tar.gz"
+    sha256 "656d03e36721528ff784e55fb2ed17396f2d20e8432e533195b4e6a776769510"
+  end
+
   depends_on "cmake" => :build
   depends_on "libconfig" => :build
   depends_on "llvm"
